@@ -1,11 +1,31 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
+
+import EditarComuna from '../components/comuna/EditarComuna.vue';
+import NewComuna from '../components/comuna/NewComuna.vue';
 import HomeView from '../views/HomeView.vue'
+import Comunas from '../views/comunas.vue'
+
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/comunas',
+    name: 'Comunas',
+    component: Comunas
+  },
+  {
+    path: '/editar-comuna/:id',
+    name: 'EditarComuna',
+    component: EditarComuna
+  },
+  {
+    path: '/add-comuna/',
+    name: 'NewComuna',
+    component: NewComuna
   },
   {
     path: '/about',
@@ -18,7 +38,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes
 })
 

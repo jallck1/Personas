@@ -1,33 +1,33 @@
 <template>
-  <div class="container">
-    <h1>Listado de Comunas</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Código</th>
-          <th>Nombre</th>
-          <th>Municipio</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(comuna, index) in comunas" :key="index">
-          <th scope="row">{{ index + 1 }}</th>
-          <td>{{ comuna.comu_codi }}</td>
-          <td>{{ comuna.comu_nomb }}</td>
-          <td>{{ comuna.muni_nomb }}</td>
-          <td>
-            <button @click="deleteComuna(comuna.id)" class="btn btn-danger">Eliminar</button>
-            <button @click="editComuna(comuna.id)" class="btn btn-primary">Editar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</template>
-
-<script>
+    <div class="container">
+      <h1>Listado de Comunas</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Municipio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(comuna, index) in comunas" :key="index">
+            <th scope="row">{{ index + 1 }}</th>
+            <td>{{ comuna.comu_codi }}</td>
+            <td>{{ comuna.comu_nomb }}</td>
+            <td>{{ comuna.muni_nomb }}</td>
+            <td>
+              <button @click="deleteComuna(comuna.id)" class="btn btn-danger">Eliminar</button>
+              <button @click="editComuna(comuna.id)" class="btn btn-primary">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </template>
+  
+  <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -67,5 +67,3 @@ export default {
   }
 }
 </script>
-
-
