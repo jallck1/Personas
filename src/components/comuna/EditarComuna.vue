@@ -1,6 +1,6 @@
 <template>
     <div class="container text-start">
-    <h1 class="text-primary fw-bold"> Editar</h1>
+    <h1 class="text-primary fw-bold"> Editarlas</h1>
     <div class="card">
     <div class="card-header fw-bold">
     Comuna
@@ -88,7 +88,7 @@ export default {
     },
 }
 
-mounted() {
+mounted() {;
   const comunaId = this.$route.params.id;
   if (comunaId) {
     axios.get(`http://127.0.0.1:8000/api/comunas/${comunaId}`)
